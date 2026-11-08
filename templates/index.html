@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <!-- Connecting CSS -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Registration Form</h1>
+    <p>Enter your details below</p>
+
+    <form action="/register" method="POST" id="studentForm">
+
+        <label>Full Name</label>
+        <input type="text" name="name"
+        placeholder="Enter your name" required>
+
+        <label>USN</label>
+        <input type="text" name="usn"
+        placeholder="Enter your USN" required>
+
+        <label>Email</label>
+        <input type="email" name="email"
+        placeholder="Enter email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone"
+        placeholder="Enter phone number"
+        pattern="[0-9]{10}" required>
+
+        <label>Course</label>
+        <select name="course" required>c
+            <option value="">Select Course</option>
+            <option value="CSE">Computer Science</option>
+            <option value="ECE">Electronics</option>
+            <option value="ISE">Information Science</option>
+            <option value="AIML">AI and Machine Learning</option>
+        </select>
+
+        <label>Gender</label>
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Register Student</button>
+
+    </form>
+
+</div>
+
+<!-- Connecting JavaScript -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
